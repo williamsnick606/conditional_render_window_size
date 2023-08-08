@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const [width, setWidth] = useState(0);
+	const [height, setHeight] = useState(0);
+  
+	window.addEventListener('resize', () => {
+	  setWidth(window.innerWidth);
+	  setHeight(window.innerHeight);
+	});
+  
+	return (
+	  <div>
+		<h2>
+			conditional_render_window_size React App
+		</h2>
+		<p>The window width is {width}px.</p>
+		<p>The window height is {height}px.</p>
+	  </div>
+	);
+  };
 
-export default App;
+  export default App;
