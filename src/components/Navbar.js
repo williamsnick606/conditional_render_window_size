@@ -3,13 +3,13 @@ import Posts from './Posts.js';
 
 
 let Navbar = (props) => {
-	let winWidth = window.innerWidth
-	let winHeight = window.innerHeight
+	let winWidth = props.width
+	let winHeight = props.height
 
 	return(
 		<div>
 			<h4>
-				Hey hey wow
+				Navbar now ...
 			</h4>
 			<h3>
 				Hi1 da Window width is {winWidth}.
