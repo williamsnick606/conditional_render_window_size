@@ -1,8 +1,12 @@
+import Fullmenu from './Fullmenu.js';
+import Hamburger from './Hamburger.js';
 import { useState } from 'react';
-import About from './About.js';
-import Posts from './Posts.js';
 
-let Navbar = () => {
+/**
+ * This navbar conditionally renders either a fullscreen menu bar, 
+ * or a Hamburger menu for mobile screens.
+ */
+const Navbar = () => {
 
 
 	let [width, setWidth] = useState(0);
@@ -18,21 +22,12 @@ let Navbar = () => {
 		setHeight(window.innerHeight);
 	  });
 
+	if (width <= 800){
+		return (<Hamburger />);
+	}
 	return(
-		<div>
-			<h4>
-				Navbar now ...
-			</h4>
-			<h3>
-				Hi1 da Window width is {width}.
-			</h3>
-
-			<h3>
-				Hi2 da Window height is {height}.
-			</h3>
-		</div>
-	// rest of the code..
-	); 
+		<Fullmenu />
+	);
 };
 
 export default Navbar;

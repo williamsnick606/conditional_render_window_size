@@ -1,15 +1,13 @@
 import Navbar from './components/Navbar.js';
 
-const App = () => {
-  
+function App() {
 	return (
-	  <div>
-		<Navbar />
-		<h2>
-			conditional_render_window_size React App
-		</h2>
-	  </div>
+		<div>
+			<h2>
+				conditional_render_window_size React App
+			</h2>
+			<Navbar />
+		</div>
 	);
-  };
-
+}
   export default App;
